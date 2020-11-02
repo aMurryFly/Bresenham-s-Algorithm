@@ -266,13 +266,22 @@ void consoleInput(){
 	if (radio>1 and radio < 1000){
 		std::cout << "Coordenadas centro circunferencia: " << "\n" << "[x]: ";
 		std::cin >> x;
-		std::cout << "[y]: ";
-		std::cin >> y;
-
-		bresenhamAlgorithm(radio, x, y);
+		if (std::cin.fail()){
+			std::cout << "Dato no valido " << "\n";
+		}
+		else {
+			std::cout << "[y]: ";
+			std::cin >> y;
+			if (std::cin.fail()) {
+				std::cout << "Dato no valido " << "\n";
+			}
+			else {
+				bresenhamAlgorithm(radio, x, y);
+			}
+		}
 	}
 	else{
-		std::cout << "Valor no v�lido para el radio ";
+		std::cout << "Valor no valido para el radio ";
 	}
 
 }
