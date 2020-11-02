@@ -3,9 +3,9 @@
 /*-----------------------2021-1-----------------------------*/
 /*-------Alumno:--Alfonso Murrieta Villegas ----------------*/
 
-/*NOTA: El presente código está en gran medida basado en el material
+/*NOTA: El presente cï¿½digo estï¿½ en gran medida basado en el material
 		de laboratorio del profesor Luis Sergio Valencia Castro, 
-		práctica 3 y 4. 
+		prï¿½ctica 3 y 4. 
 */
 
 
@@ -16,7 +16,7 @@
 #include <glew.h>
 #include <glfw3.h>
 
-// Para gráficos
+// Para grï¿½ficos
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -58,7 +58,7 @@ float movZ = 0.0f;// Mover el objeto en z para poder dimensionarlo a 3/4 en el v
 
 /*---------------------WINDOWS FUNCTIONS---------------------------*/
 
-//Funciones para el viewport y tamaño deventana
+//Funciones para el viewport y tamaï¿½o deventana
 void getResolution(){
 	const GLFWvidmode * mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 	SCR_WIDTH = mode->width;
@@ -100,7 +100,7 @@ void bresenhamAlgorithm(int radio, float coorX, float coorY) { //funcion para di
 		auxPointsY.push_back(y);
 	}
 
-	//Obtención de los demás puntos
+	//Obtenciï¿½n de los demï¿½s puntos
 	bresenhamComplement((float)coorX,(float)coorY);
 	//Puntos de los ejes
 	axesPoints((float)coorX, (float)coorY);
@@ -226,13 +226,13 @@ void drawing(Shader shader){
 	glm::mat4 view = glm::mat4(1.0f);	
 
 
-	//MANIPULACIÓN Y VISTA
+	//MANIPULACIï¿½N Y VISTA
 
-	//Para poder escalar la circunferencia respecto a la ventana empleé una proyección
+	//Para poder escalar la circunferencia respecto a la ventana empleï¿½ una proyecciï¿½n
 	glm::mat4 projection = glm::mat4(1.0f);
 	projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 10000.0f);
 
-	// Mediante una traslación centramos el modelo en la vista de la ventana
+	// Mediante una traslaciï¿½n centramos el modelo en la vista de la ventana
 	view = glm::translate(view, glm::vec3(movX, movY, movZ));
 	shader.setMat4("model", model);
 	shader.setMat4("view", view);
@@ -272,7 +272,7 @@ void consoleInput(){
 		bresenhamAlgorithm(radio, x, y);
 	}
 	else{
-		std::cout << "Valor no válido para el radio ";
+		std::cout << "Valor no vï¿½lido para el radio ";
 	}
 
 }
@@ -303,7 +303,7 @@ int main(int argc, char** argv){
 
 	glewInit();
 
-	//Llamada de validación y algoritmo <- Parte agregada al código del profesor Valencia
+	//Llamada de validaciï¿½n y algoritmo <- Parte agregada al cï¿½digo del profesor Valencia
 	consoleInput();
 	myData();
 
