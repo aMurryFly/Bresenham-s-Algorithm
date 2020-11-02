@@ -1,6 +1,6 @@
 # Bresenham-s-Algorithm
 
-#Descripción General 
+## Descripción General 
 
 Para el desarrollo de este proyecto se desarrollaron los siguientes 2 manuales
 
