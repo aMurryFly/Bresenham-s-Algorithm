@@ -3,9 +3,9 @@
 /*-----------------------2021-1-----------------------------*/
 /*-------Alumno:--Alfonso Murrieta Villegas ----------------*/
 
-/*NOTA: El presente c�digo est� en gran medida basado en el material
+/*NOTA: El presente codigo esta en gran medida basado en el material
 		de laboratorio del profesor Luis Sergio Valencia Castro, 
-		pr�ctica 3 y 4. 
+		practica 3 y 4. 
 */
 
 
@@ -16,7 +16,7 @@
 #include <glew.h>
 #include <glfw3.h>
 
-// Para gr�ficos
+// Para graficos
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -58,7 +58,7 @@ float movZ = 0.0f;// Mover el objeto en z para poder dimensionarlo a 3/4 en el v
 
 /*---------------------WINDOWS FUNCTIONS---------------------------*/
 
-//Funciones para el viewport y tama�o deventana
+//Funciones para el viewport y tamano deventana
 void getResolution(){
 	const GLFWvidmode * mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 	SCR_WIDTH = mode->width;
@@ -100,7 +100,7 @@ void bresenhamAlgorithm(int radio, float coorX, float coorY) { //funcion para di
 		auxPointsY.push_back(y);
 	}
 
-	//Obtenci�n de los dem�s puntos
+	//Obtencion de los demas puntos
 	bresenhamComplement((float)coorX,(float)coorY);
 	//Puntos de los ejes
 	axesPoints((float)coorX, (float)coorY);
@@ -226,13 +226,13 @@ void drawing(Shader shader){
 	glm::mat4 view = glm::mat4(1.0f);	
 
 
-	//MANIPULACI�N Y VISTA
+	//MANIPULACION Y VISTA
 
-	//Para poder escalar la circunferencia respecto a la ventana emple� una proyecci�n
+	//Para poder escalar la circunferencia respecto a la ventana emplea una proyeccion
 	glm::mat4 projection = glm::mat4(1.0f);
 	projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 10000.0f);
 
-	// Mediante una traslaci�n centramos el modelo en la vista de la ventana
+	// Mediante una traslacion centramos el modelo en la vista de la ventana
 	view = glm::translate(view, glm::vec3(movX, movY, movZ));
 	shader.setMat4("model", model);
 	shader.setMat4("view", view);
@@ -312,7 +312,7 @@ int main(int argc, char** argv){
 
 	glewInit();
 
-	//Llamada de validaci�n y algoritmo <- Parte agregada al c�digo del profesor Valencia
+	//Llamada de validacion y algoritmo <- Parte agregada al codigo del profesor Valencia
 	consoleInput();
 	myData();
 
