@@ -1,4 +1,4 @@
-# ✨ Bresenham-s-Algorithmo ✨
+# ✨ Bresenham-s-Algorithm ✨
 
 El presente proyecto es una implementación del algoritmo de Bresenham para el trazo de circunferencias 
 
